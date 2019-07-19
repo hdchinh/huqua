@@ -20,7 +20,7 @@ class String
   end
 
   def blue
-    colorize(34)
+    colorize(33)
   end
 
   def pink
@@ -86,35 +86,26 @@ class Huqua
 			# read and show tables name and size data.
 			if !tables.size.zero?
 				puts "You have #{tables.size} tables in your database:".green
-				if tables.size > 30
-					puts "Your database is large, top 30 tables: \n"
-					50.times do |n|
-						term = "SELECT* FROM #{tables[n]}"
-		    		res = $conn.exec(term)
-						puts "#{tables[n]} - have #{res} records"
+				tables.size.times do |n|
+					term = "SELECT count(id) FROM #{tables[n]}"
+					# get size table
+					begin
+	    		  res = $conn.exec(term)
+	    		rescue StandardError => e
+						res = nil
 					end
-				else
-					tables.size.times do |n|
-						term = "SELECT count(id) FROM #{tables[n]}"
-						# get size table
-						begin
-		    		  res = $conn.exec(term)
-		    		rescue StandardError => e
-							res = nil
-						end
-						# make color for fun
-						if n % 2 == 0
-							if res
-								puts "- #{tables[n]} (#{res[0]['count']})".blue
-							else
-								puts "Can not find #{tables[n]} in database".red
-							end
+					# make color for fun
+					if n % 2 == 0
+						if res
+							puts "- #{tables[n]} (#{res[0]['count']})".blue
 						else
-							if res
-								puts "- #{tables[n]} (#{res[0]['count']})".yellow
-							else
-								puts "Can not find #{tables[n]} in database".yellow
-							end
+							puts "Can not find #{tables[n]} in database".red
+						end
+					else
+						if res
+							puts "- #{tables[n]} (#{res[0]['count']})".yellow
+						else
+							puts "Can not find #{tables[n]} in database".yellow
 						end
 					end
 				end
