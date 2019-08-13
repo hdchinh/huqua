@@ -79,7 +79,7 @@ class Huqua
 				    end
 				  end
 			  rescue StandardError => e
-				  puts "Something is wrong, Missing schema.rb or syntax error.".red
+				  puts "Someth ing is wrong, Missing schema.rb or syntax error.".red
 			  end
 			end
 
