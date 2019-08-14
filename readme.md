@@ -24,8 +24,22 @@ So I build a simple tool. At this time, it works only `macOS` and database `Post
 Just run command `gem install huqua` or add to gemfile `gem 'huqua'`
 
 Requitment: 
-1. platform: macOS
+1. platform: macOS/Linux
 2. database: PostgreSQL
+
+**Note**  
+On `Linux`, make sure you config database.yml like this:  
+
+```
+development:
+  adapter: postgresql
+  host: localhost
+  encoding: unicode
+  database: your_database_name
+  pool: 5
+  username: your_username_in_database
+  password: your_password
+```
 
 ## How to use
 
