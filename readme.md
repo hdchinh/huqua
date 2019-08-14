@@ -1,24 +1,3 @@
-## why it fun?
-
-If you are a newbie in ruby on rails development, so many times, you can test your database on the local environment to make sure your connection to the database is successful or success to import data (from SQL or CSV...)
-
-You have 2 choices.
-
-no.1: You can open an administrator platform for PostgreSQL like **pgadmin** 
-- need to install a tool (not good for a weak computer).
-- open the tool and checking (wasting time and not good for a weak computer again :D)
-
-no.2: You can access the database from the terminal.
-- step 1: type command `rails c`
-- step 2: try to remember the model name and typing like `Cat.first` to see the first record.
-- step 3: need to `exit` to back terminal.
-- do again when you need to check something or open a new terminal window.
-...
-
-So I think I can make it simple, when I need to check structure simple, like check new record can save in DB or check number records of a table. 
-
-So I build a simple tool. At this time, it works only `macOS` and database `PostgreSQL`.
-
 ## How to install
 
 Just run command `gem install huqua` or add to gemfile `gem 'huqua'`
@@ -92,3 +71,24 @@ The first record:{"id"=>"1", "created_at"=>"2019-05-07 06:16:17.272652", "update
 ## How to remove
 
 Just run: `gem uninstall huqua` and enter something terminal tell you.
+
+## why it fun?
+
+If you are a newbie in ruby on rails development, so many times, you can test your database on the local environment to make sure your connection to the database is successful or success to import data (from SQL or CSV...)
+
+You have 2 choices.
+
+no.1: You can open an administrator platform for PostgreSQL like **pgadmin** 
+- need to install a tool (not good for a weak computer).
+- open the tool and checking (wasting time and not good for a weak computer again :D)
+
+no.2: You can access the database from the terminal.
+- step 1: type command `rails c`
+- step 2: try to remember the model name and typing like `Cat.first` to see the first record.
+- step 3: need to `exit` to back terminal.
+- do again when you need to check something or open a new terminal window.
+...
+
+So I think I can make it simple, when I need to check structure simple, like check new record can save in DB or check number records of a table. 
+
+So I build a simple tool. At this time, it works only `macOS` and database `PostgreSQL`.
