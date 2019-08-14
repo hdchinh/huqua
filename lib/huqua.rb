@@ -45,11 +45,11 @@ end
 
 # start connect to database
 begin
-	$conn = PG::Connection.connect(
-	  :hostaddr => "127.0.0.1", :port=>5432,
-	  :dbname   => $database,
-	  :user     => $username,
-	  :password => $password
+  $conn = PG::Connection.connect(
+    :hostaddr => "127.0.0.1", :port=>5432,
+    :dbname   => $database,
+    :user     => $username,
+    :password => $password
 	)
   puts "Congrats, you have good connection to database !\n".green
 rescue StandardError => e
@@ -64,24 +64,24 @@ class Huqua
     # no prams
     if ARGV.size.zero?
 	    # read schema.rb file, collect tables name.
-	    begin
-		    File.open("db/schema.rb", "r") do |f|
-			    f.each_line do |line|
-				    if line.include?("create_table")
-				  	  short_line = line.delete(' ')
-				  	  table_name = ""
-				  	  i = 13
-				  	  while short_line[i] != "'" && short_line[i] != '"'
-				  		  table_name << short_line[i].to_s
-				  		  i = i + 1
-						  end
-				  	  tables.push(table_name)
-				    end
-				  end
-			  rescue StandardError => e
+      begin
+        File.open("db/schema.rb", "r") do |f|
+          f.each_line do |line|
+            if line.include?("create_table")
+              short_line = line.delete(' ')
+              table_name = ""
+              i = 13
+              while short_line[i] != "'" && short_line[i] != '"'
+                table_name << short_line[i].to_s
+                i = i + 1
+              end
+              tables.push(table_name)
+            end
+          end
+        rescue StandardError => e
 				  puts "Something is wrong, Missing schema.rb or syntax error.".red
-			  end
-			end
+        end
+      end
 
 			# read and show tables name and size data.
 			if !tables.size.zero?
