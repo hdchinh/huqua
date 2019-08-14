@@ -83,79 +83,79 @@ class Huqua
         end
       end
 
-			# read and show tables name and size data.
-			if !tables.size.zero?
-			  puts "You have #{tables.size} tables in your database:".green
-			  tables.size.times do |n|
-				  term = "SELECT count(id) FROM #{tables[n]}"
-				  # get size table
-				  begin
-	    		  res = $conn.exec(term)
-	    	  rescue StandardError => e
-					  res = nil
-				  end
-				  # make color for fun
-				  if n % 2 == 0
-					  if res
-						  puts "- #{tables[n]} (#{res[0]['count']})".blue
-					  else
-						  puts "Can not find #{tables[n]} in database".red
-					  end
-				  else
-					  if res
-						  puts "- #{tables[n]} (#{res[0]['count']})".yellow
-					  else
-						  puts "Can not find #{tables[n]} in database".yellow
-					  end
-				  end
-			  end
-		  end
-	  end
+      # read and show tables name and size data.
+      if !tables.size.zero?
+        puts "You have #{tables.size} tables in your database:".green
+        tables.size.times do |n|
+          term = "SELECT count(id) FROM #{tables[n]}"
+          # get size table
+          begin
+            res = $conn.exec(term)
+          rescue StandardError => e
+            res = nil
+          end
+          # make color for fun
+          if n % 2 == 0
+            if res
+              puts "- #{tables[n]} (#{res[0]['count']})".blue
+            else
+              puts "Can not find #{tables[n]} in database".red
+            end
+          else
+            if res
+              puts "- #{tables[n]} (#{res[0]['count']})".yellow
+            else
+              puts "Can not find #{tables[n]} in database".yellow
+            end
+          end
+        end
+      end
+    end
 
-		# params
-		if !ARGV.size.zero?
-		  # 1 params
-		  if ARGV.size <= 2
-			  if ARGV.size == 1
-				  begin
-					  term = "SELECT * FROM #{ARGV[0]} limit 1"
-			      res = $conn.exec(term)		
-				  rescue StandardError => e
-					  res = nil
-				  end
-				  if res
-				    res.each{ |row|
-				      puts "The first record:".red << "#{row}\n"
-				    }
-			    else
-			      puts "* Can not find #{tables[n].red} in database"
-			    end
-			  end
+    # params
+    if !ARGV.size.zero?
+      # 1 params
+      if ARGV.size <= 2
+        if ARGV.size == 1
+          begin
+            term = "SELECT * FROM #{ARGV[0]} limit 1"
+            res = $conn.exec(term)		
+          rescue StandardError => e
+            res = nil
+          end
+          if res
+            res.each{ |row|
+              puts "The first record:".red << "#{row}\n"
+            }
+          else
+            puts "* Can not find #{tables[n].red} in database"
+          end
+        end
 
-			  # 2 params
-			  if ARGV.size == 2
-				  if ARGV[1].to_i > 0
-					  begin
-						  term = "SELECT * FROM #{ARGV[0]} where id = #{ARGV[1].to_i}"
-					    res = $conn.exec(term)								
-					  rescue StandardError => e
-						  res = nil
-					  end
-					  if res
-					    res.each{ |row|
-					      puts "The first record:".red << "#{row}\n"
-					    }
-				    else
-				  	  puts "Can not find record, something is wrong".red
-				    end
-				  else
-					  puts "The second params need a integer".red	
-				  end
-			  end	
-			else
-			  puts "The number of parameters is wrong".red
-		  end
-	  end
+        # 2 params
+        if ARGV.size == 2
+          if ARGV[1].to_i > 0
+            begin
+              term = "SELECT * FROM #{ARGV[0]} where id = #{ARGV[1].to_i}"
+              res = $conn.exec(term)								
+            rescue StandardError => e
+              res = nil
+            end
+            if res
+              res.each{ |row|
+                puts "The first record:".red << "#{row}\n"
+              }
+            else
+              puts "Can not find record, something is wrong".red
+            end
+          else
+            puts "The second params need a integer".red	
+          end
+        end
+      else
+        puts "The number of parameters is wrong".red
+      end
+    end
   end
   # end main class
 end
