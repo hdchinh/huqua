@@ -21,7 +21,7 @@ So I build a simple tool. At this time, it works only `macOS` and database `Post
 
 ## How to install
 
-Just run command `gem install huqua`.
+Just run command `gem install huqua` or add to gemfile `gem 'huqua'`
 
 Requitment: 
 1. platform: macOS
