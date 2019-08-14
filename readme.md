@@ -26,8 +26,6 @@ development:
 
 run `huqua`
 
-[huqua](/images/huqua.png)
-
 result like: 
 
 ```
