@@ -1,3 +1,5 @@
+[gif](https://i.imgur.com/IC4B7iR.gif)
+
 ## How to install
 
 Just run command `gem install huqua` or add to gemfile `gem 'huqua'`
