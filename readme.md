@@ -1,4 +1,4 @@
-[gif](https://i.imgur.com/IC4B7iR.gif)
+![gif](https://i.imgur.com/IC4B7iR.gif)
 
 ## How to install
 
