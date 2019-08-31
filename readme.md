@@ -1,4 +1,4 @@
-![gif](https://i.imgur.com/IC4B7iR.gif)
+![gif](/images/huqua.png)
 
 ## How to install
 
