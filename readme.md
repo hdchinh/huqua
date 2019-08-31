@@ -11,7 +11,7 @@ Requitment:
 **Note**  
 On `Linux`, make sure you config database.yml like this:  
 
-```
+```yaml
 development:
   adapter: postgresql
   host: localhost
