@@ -1,4 +1,4 @@
-![gif](/images/huqua.png)
+![gif](/images/desc.gif)
 
 ## How to install
 
