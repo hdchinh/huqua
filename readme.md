@@ -1,3 +1,5 @@
+![gif](/images/huqua.png)
+
 ## How to install
 
 Just run command `gem install huqua` or add to gemfile `gem 'huqua'`
@@ -62,7 +64,7 @@ ex: `huqua users 1`
 
 result like: 
 
-```
+```ruby
 Congrats, you have good connection to database !
 
 The first record:{"id"=>"1", "created_at"=>"2019-05-07 06:16:17.272652", "updated_at"=>"2019-05-07 06:16:17.272652", "email"=>"hduychinh@gmail.com", "encrypted_password"=>"$2a$11$PrsExR3x5HrqK5n3d/RCDeQNDbVKqRmdLsB58ZdBv/fV4x2hJU0OK", "reset_password_token"=>nil, "reset_password_sent_at"=>nil, "remember_created_at"=>nil}
