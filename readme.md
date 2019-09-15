@@ -1,8 +1,10 @@
+## Screenshot
+
 ![gif](/images/desc.gif)
 
 ## How to install
 
-Just run command `gem install huqua` or add to gemfile `gem 'huqua'`
+Just run command `gem install huqua` or add `gem 'huqua'` to `Gemfile`
 
 Requitment: 
 1. platform: macOS/Linux
@@ -26,9 +28,9 @@ development:
 
 ### 1. To see how many tables you have
 
-run `huqua`
+Run `huqua`
 
-result like: 
+Result like: 
 
 ```
 Congrats, you have good connection to database !
@@ -43,11 +45,11 @@ You have 5 tables in your database:
 
 ### 2. To see the first record in table `table_name` (table name **NOT** model name)
 
-run `huqua table_name`
+Run `huqua table_name`
 
-ex: `huqua users`
+Ex: `huqua users`
 
-result like: 
+Result like: 
 
 ```
 Congrats, you have good connection to database !
@@ -57,12 +59,12 @@ The first record:{"id"=>"1", "created_at"=>"2019-05-07 06:16:17.272652", "update
 
 ### 3. To see the record `n`
 
-run `huqua users n`
+Run `huqua users n`
 
-ex: `huqua users 1`
+Ex: `huqua users 1`
 > to return users have id = 1
 
-result like: 
+Result like: 
 
 ```ruby
 Congrats, you have good connection to database !
@@ -72,7 +74,7 @@ The first record:{"id"=>"1", "created_at"=>"2019-05-07 06:16:17.272652", "update
 
 ## How to remove
 
-Just run: `gem uninstall huqua` and enter something terminal tell you.
+Just run: `gem uninstall huqua` and press `enter`
 
 ## why it fun?
 
@@ -80,11 +82,11 @@ If you are a newbie in ruby on rails development, so many times, you can test yo
 
 You have 2 choices.
 
-no.1: You can open an administrator platform for PostgreSQL like **pgadmin** 
+1: You can open an administrator platform for PostgreSQL like **pgadmin** 
 - need to install a tool (not good for a weak computer).
 - open the tool and checking (wasting time and not good for a weak computer again :D)
 
-no.2: You can access the database from the terminal.
+2: You can access the database from the terminal.
 - step 1: type command `rails c`
 - step 2: try to remember the model name and typing like `Cat.first` to see the first record.
 - step 3: need to `exit` to back terminal.
@@ -93,4 +95,4 @@ no.2: You can access the database from the terminal.
 
 So I think I can make it simple, when I need to check structure simple, like check new record can save in DB or check number records of a table. 
 
-So I build a simple tool. At this time, it works only `macOS` and database `PostgreSQL`.
+So I build a simple tool. At this time, it work only with `PostgreSQL`. :neutral_face:
